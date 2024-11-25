@@ -122,15 +122,20 @@ or manually
 - Download & Intall Docker Desktop https://www.docker.com/
 
 `docker build -t depression-prediction .`
+
 - Run it, execute the command below:
+
 `docker run -it -p 9696:9696 depression-prediction:latest`
 
 ### 6. Run app and make prediction
 - Open new terminal and run:
 `python predict_test.py`
 
-You should see
+You should see:
 
+{'depression': False, 'depression_probability': 0.017845543314410916}
+
+Person does not have depression.
 
 
 
