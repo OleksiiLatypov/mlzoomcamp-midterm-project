@@ -128,7 +128,9 @@ or manually
 `docker run -it -p 9696:9696 depression-prediction:latest`
 
 ### 6. Run app and make prediction
+
 - Open new terminal and run:
+
 `python predict_test.py`
 
 You should see:
