@@ -242,38 +242,40 @@ def train_model(X, y, model):
     return res, dv
 
 ### Linear Models ###
-# model_lr = LogisticRegression(max_iter=500, class_weight='balanced', random_state=1)
-# results_lr, dv_lr = train_model(X, y, model_lr)
-# print(results_lr, dv_lr)
+model_lr = LogisticRegression(max_iter=500, class_weight='balanced', random_state=1)
+results_lr, dv_lr = train_model(X, y, model_lr)
+print('Logistic Regression')
+print(results_lr, dv_lr)
 
-# model_lr = RidgeClassifier(alpha=1.0)
-# results_ridge, dv_ridge = train_model(X, y, model_lr)
-# print(results_ridge, dv_ridge)
+model_lr = RidgeClassifier(alpha=1.0)
+results_ridge, dv_ridge = train_model(X, y, model_lr)
+print('Ridge Regression')
+print(results_ridge, dv_ridge)
 
 # ### Ensemble models ###
 
 # #RandomForestClassifier
-# model_rf = RandomForestClassifier(class_weight='balanced', random_state=1)
-# results_rf, dv_rf = train_model(X, y, model_rf)
-# print(results_rf, dv_rf)
+model_rf = RandomForestClassifier(class_weight='balanced', random_state=1)
+results_rf, dv_rf = train_model(X, y, model_rf)
+print(results_rf, dv_rf)
 
 # #XGBClassifier
-# model_xgb =  XGBClassifier(n_estimators=500, scale_pos_weight=1, random_state=1, eval_metric='logloss')
-# results_xgb, dv_xgb = train_model(X, y, model_xgb)
-#print('XGBClassifier')
-# print(results_xgb, dv_xgb)
+model_xgb =  XGBClassifier(n_estimators=500, scale_pos_weight=1, random_state=1, eval_metric='logloss')
+results_xgb, dv_xgb = train_model(X, y, model_xgb)
+print('XGBClassifier')
+print(results_xgb, dv_xgb)
 
 #CatBoostClassifier
-# model_cat =  CatBoostClassifier(iterations=500, random_state=1, eval_metric='Logloss', silent=True)
-# results_cat, dv_cat = train_model(X, y, model_cat)
-# print('CatBoostClassifier')
-# print(results_cat, dv_cat)
+model_cat =  CatBoostClassifier(iterations=500, random_state=1, eval_metric='Logloss', silent=True)
+results_cat, dv_cat = train_model(X, y, model_cat)
+print('CatBoostClassifier')
+print(results_cat, dv_cat)
 
 #LightGBM
-# model_lgb = LGBMClassifier(n_estimators=500, random_state=1, verbosity=-1)
-# results_lgb, dv_lgb = train_model(X, y, model_lgb)
-# print('LightGBM Classifier')
-# print(results_lgb, dv_lgb)
+model_lgb = LGBMClassifier(n_estimators=500, random_state=1, verbosity=-1)
+results_lgb, dv_lgb = train_model(X, y, model_lgb)
+print('LightGBM Classifier')
+print(results_lgb, dv_lgb)
 
 
 #Hyperparametrs tuning using OPTUNA
@@ -484,11 +486,4 @@ print(f'the model is saved to {output_file}')
 
 
 
-# Load DictVectorizer and CatBoost model from pickle
-# with open('dict_vectorizer.pkl', 'rb') as f_out:
-#     loaded_dv = pickle.load(f)  # Load the DictVectorizer
-#     print('DV loaded success')
 
-# with open('catboost_model.pkl', 'rb') as f:
-#     loaded_model = pickle.load(f)  # Load the trained CatBoost model
-#     print('Model loaded success')
