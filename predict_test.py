@@ -23,9 +23,9 @@ response = requests.post(url, json=person).json()
 print(response)
 
 if response['depression'] == True:
-    print('Person has depression and need help')
+    print('Person has depression and need help.')
 else:
-    print('Person doesnt have depression ')
+    print('The person does not have depression.')
 
 
     
