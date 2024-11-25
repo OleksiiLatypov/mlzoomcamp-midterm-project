@@ -35,11 +35,111 @@ This dataset contains information about individuals and various factors that may
 | **Study Satisfaction**          | The level of satisfaction the individual feels about their studies (numeric or ordinal scale). Used to explore the relationship between academic satisfaction and mental health. |
 | **Depression Status**           | Whether the individual has depression (1 = depressed, 0 = not depressed). This is the target variable for classification or prediction tasks. |
 
-### Dataset Usage
-This dataset is intended to help researchers and analysts explore the relationship between various stress factors (academic, work, etc.) and depression. It can be used for:
-- **Exploratory Data Analysis (EDA)**
-- **Correlation studies**
-- **Predictive modeling for depression status**
+### Classification Models Used
+
+In this project, we will test the hypothesis of whether a health insurance claim will be made based on the provided features. To explore this, we will use the following classification models:
+
+- **Logistic Regression**
+- **Ridge Classifier**
+- **Decision Trees**
+- **Random Forest**
+- **XGBoost**
+- **CatBoost**
+- **LightGBM**
+
+Each of these models will be evaluated to determine which provides the best performance in predicting health insurance claims. We will compare their results using appropriate evaluation metrics, such as accuracy, precision, recall, and F1-score.
+
+### File Description
+
+The folder **Midterm Project** includes the following files:
+
+### File Description
+
+The folder **Midterm Project** includes the following files:
+
+### File Description
+
+The folder **Midterm Project** includes the following files:
+
+| **File Name**             | **Description**                                                                                         |
+|---------------------------|---------------------------------------------------------------------------------------------------------|
+| **data**                  | Directory containing two CSV files with the dataset for analysis.                                        |
+| **notebook.ipynb**        | Jupyter notebook for data preprocessing, cleaning, and model selection.                                   |
+| **train.py**              | Python script for training the final machine learning model.                                              |
+| **model.bin**             | The saved model file, serialized using pickle for later use.                                              |
+| **predict.py**            | Script to load the trained model and serve it through a web service (using Flask).                       |
+| **predict_test.py**       | Script to test the functionality of the trained model.                                                    |
+| **Pipfile & Pipfile.lock**| Files for managing project dependencies within a Python virtual environment using Pipenv.                |
+| **Dockerfile**            | Configuration file for setting up the environment and running the project in Docker.                     |
+
+
+### How to Set Up the Project
+
+Follow these steps to set up the project from GitHub on your local machine:
+
+#### 1. Clone the Repository
+
+First, clone the repository from GitHub to your local machine. Open a terminal or command prompt and run:
+
+
+`git clone https://github.com/OleksiiLatypov/mlzoomcamp-midterm-project`
+
+### 2. Navigate to the Project Directory
+Change to the project directory:
+
+`cd mlzoomcamp-midterm-project`
+
+### 3. Set Up the Virtual Environment And Install Pipenv
+For Windows:
+
+`python -m venv venv
+.\venv\Scripts\activate
+`
+
+For macOS/Linux:
+
+`
+python3 -m venv venv
+source venv/bin/activate
+`
+
+Then install Pipenenv:
+
+`pip install pipenv`
+### 4. Install Project Dependencies
+Once the virtual environment is activated, install the required dependencies using Pipenv (which is used to manage the project dependencies):
+
+`pipenv shell `
+
+you can install all the dependencies from Pipfile by running
+`pipenv install`
+
+or manually
+
+`pipenv install pandas numpy scikit-learn flask optuna catboost seaborn xgboost lightgbm gunicorn`
+
+### 5.Install Docker
+- Download & Intall Docker Desktop https://www.docker.com/
+
+`docker build -t depression-prediction .`
+- Run it, execute the command below:
+`docker run -it -p 9696:9696 depression-prediction:latest`
+
+### 6. Run app and make prediction
+- Open new terminal and run:
+`python predict_test.py`
+
+You should see
+
+
+
+
+
+
+
+
+
+
 
 
 
