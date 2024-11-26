@@ -51,7 +51,7 @@ Each of these models will be evaluated to determine which provides the best perf
 
 ### File Description
 
-The folder **Midterm Project** includes the following files:
+The folder **mlzoomcamp-midterm-project** includes the following files:
 
 | **File Name**             | **Description**                                                                                         |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
