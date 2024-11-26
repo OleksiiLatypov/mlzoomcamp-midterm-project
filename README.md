@@ -53,14 +53,6 @@ Each of these models will be evaluated to determine which provides the best perf
 
 The folder **Midterm Project** includes the following files:
 
-### File Description
-
-The folder **Midterm Project** includes the following files:
-
-### File Description
-
-The folder **Midterm Project** includes the following files:
-
 | **File Name**             | **Description**                                                                                         |
 |---------------------------|---------------------------------------------------------------------------------------------------------|
 | **data**                  | Directory containing two CSV files with the dataset for analysis.                                        |
