@@ -353,27 +353,27 @@ def tune_hyperparameters(X, y):
     """
     # Set up the Optuna study to maximize the objective function (maximize accuracy)
     study = optuna.create_study(direction='maximize')  # We want to maximize accuracy
-    study.optimize(lambda trial: objective(trial, X, y), n_trials=25)  # 20 trials for hyperparameter search
+    study.optimize(lambda trial: objective(trial, X, y), n_trials=25)  # 25 trials for hyperparameter search
 
     # Retrieve the best trial (best hyperparameters)
     best_trial = study.best_trial
     best_params = best_trial.params
-    #print(f"Best hyperparameters: {best_params}")
-    #print(f"Best accuracy: {best_trial.value}")
+    print(f"Best hyperparameters: {best_params}")
+    print(f"Best accuracy: {best_trial.value}")
 
     return best_trial, best_params
 
 # Example usage:
 # X and y are your feature and target variables
-#best_trial, best_params = tune_hyperparameters(X, y)
+best_trial, best_params = tune_hyperparameters(X, y)
 
 # Optionally, you can retrain your model using the best parameters
 
-# best_model = CatBoostClassifier(**best_params)
-# dv = DictVectorizer(sparse=False)
-# X_dict = X.to_dict(orient='records')
-# X_transformed = dv.fit_transform(X_dict)
-# best_model.fit(X_transformed, y)
+best_model = CatBoostClassifier(**best_params)
+dv = DictVectorizer(sparse=False)
+X_dict = X.to_dict(orient='records')
+X_transformed = dv.fit_transform(X_dict)
+best_model.fit(X_transformed, y)
 
 # Now you have the best model trained with optimized hyperparameters
 
